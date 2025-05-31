@@ -8,11 +8,11 @@ public class ImageSender : MonoBehaviour
     [SerializeField] string serverUrl = "http://127.0.0.1:8000/ocr/"; // Your Django OCR API endpoint
     [SerializeField] Texture2D testImage; // The image to send
 
-    private IEnumerator Start()
+    private void Start()
     {
         // Send the image when the script starts
-        yield return new WaitForSeconds(1);
-        SendImage(testImage);
+        // yield return new WaitForSeconds(1);
+        // SendImage(testImage);
     }
 
     // Call this function to send an image file
@@ -36,8 +36,6 @@ public class ImageSender : MonoBehaviour
             yield return request.SendWebRequest();
             if (request.result == UnityWebRequest.Result.Success)
             {
-                Debug.Log("Image uploaded successfully!");
-                Debug.Log($"Server Response: {request.downloadHandler.text}");
                 // Get the JSON response
                 string jsonResponse = request.downloadHandler.text;
 
