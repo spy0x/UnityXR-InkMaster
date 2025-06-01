@@ -54,10 +54,10 @@ public class CanvasPainting : MonoBehaviour
     {
         currentLine = null;
         currentLineIndex = 0;
-        SendToServer();
     }
 
-    private void SendToServer()
+    // Called from Unity Wrapper Event ThumbsUp gameObject
+    public void SendToServer()
     {
         // convert render texture to texture2D
         Texture2D texture = new Texture2D(canvasRenderTexture.width, canvasRenderTexture.height, TextureFormat.RGBA32, false);
@@ -74,6 +74,15 @@ public class CanvasPainting : MonoBehaviour
         foreach (Transform child in canvas)
         {
             Destroy(child.gameObject);
+        }
+    }
+    
+    public void UndoLastStroke()
+    {
+        if (canvas.childCount > 0)
+        {
+            Transform lastStroke = canvas.GetChild(canvas.childCount - 1);
+            Destroy(lastStroke.gameObject);
         }
     }
     

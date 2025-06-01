@@ -6,14 +6,8 @@ using UnityEngine.Networking;
 public class ImageSender : MonoBehaviour
 {
     [SerializeField] string serverUrl = "http://127.0.0.1:8000/ocr/"; // Your Django OCR API endpoint
-    [SerializeField] Texture2D testImage; // The image to send
 
-    private void Start()
-    {
-        // Send the image when the script starts
-        // yield return new WaitForSeconds(1);
-        // SendImage(testImage);
-    }
+    [SerializeField] private Trainer trainer;
 
     // Call this function to send an image file
     public void SendImage(Texture2D image)
@@ -43,10 +37,17 @@ public class ImageSender : MonoBehaviour
                 string wrappedJson = $"{{\"responses\":{jsonResponse}}}";
                 OCRResponseArray responseArray = JsonUtility.FromJson<OCRResponseArray>(wrappedJson);
 
-                // Process each response
-                foreach (var response in responseArray.responses)
+                if (responseArray.responses == null || responseArray.responses.Length == 0)
                 {
-                    Debug.Log($"Detected Text: {response.detectedText}, Confidence: {response.confidence}");
+                    trainer.WrongInput();
+                }
+                else
+                {
+                    foreach (var response in responseArray.responses)
+                    {
+                        trainer.CheckInput(response);
+                        Debug.Log($"Detected Text: {response.detectedText}, Confidence: {response.confidence}");
+                    }
                 }
             }
             else

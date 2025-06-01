@@ -39,10 +39,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6521568904388107980}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d075dfd18cc32444cbc86064003bceaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   serverUrl: http://localhost:8000/ocr/
-  testImage: {fileID: 2800000, guid: 72cb20d3584b9874b8f73d1086d576d5, type: 3}
