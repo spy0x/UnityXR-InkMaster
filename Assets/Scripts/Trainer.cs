@@ -31,7 +31,6 @@ public class Trainer : MonoBehaviour
     [SerializeField] private CanvasPainting canvasPainting;
 
     private string currentCharacter;
-    private Color defaultTextColor;
     private void Start()
     {
         characterText.text = "";
@@ -41,7 +40,7 @@ public class Trainer : MonoBehaviour
     private void SetCurrentCharacter()
     {
         canvasPainting.ClearCanvas();
-        characterText.color = defaultTextColor; // Reset text color
+        characterText.color = defaultColor; // Reset text color
         JapaneseCharacter[] characters =
             characterType switch
             {
