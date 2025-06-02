@@ -342,6 +342,9 @@ MonoBehaviour:
   canvasLayerMask: Water
   canvasRenderTexture: {fileID: 8400000, guid: 2d32d0eb233ecf54f85732d033ce0e0d, type: 2}
   imageSender: {fileID: 0}
+  brushHandRenderer: {fileID: 0}
+  brushHandMaterial: {fileID: 2100000, guid: 50fc1ccde08655f43b66a42e087d5f3c, type: 2}
+  originalHandMaterial: {fileID: 2100000, guid: db3a410a262fff84594694f542a202ce, type: 2}
   fingerTip: {fileID: 0}
 --- !u!1 &3661994484493444084
 GameObject:
@@ -742,7 +745,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 353768765164184968}

@@ -629,6 +629,66 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPainting
       objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4949765454830296824}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4949765454830296824}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetIsHandOverCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetIsHandOverCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CanvasPainting, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CanvasPainting, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenHover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503579554025175577, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: _whenUnhover.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8806613788457173486, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
       propertyPath: imageSender
       value: 
@@ -710,10 +770,6 @@ PrefabInstance:
       propertyPath: trainer
       value: 
       objectReference: {fileID: 5010839483882227698}
-    - target: {fileID: 9159975556044770093, guid: 98654bda309ace64bb5becbe5f7443aa, type: 3}
-      propertyPath: serverUrl
-      value: http://localhost:8000/ocr/
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -830,10 +886,6 @@ PrefabInstance:
     - target: {fileID: 6252058608298873038, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8722776670581731563, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
-      propertyPath: instanceId
-      value: 3016cc5d-dabd-455a-a11a-e1a568b21362
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

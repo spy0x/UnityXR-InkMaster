@@ -11,10 +11,14 @@ public class CanvasPainting : MonoBehaviour
     [SerializeField] private string canvasLayerMask;
     [SerializeField] private RenderTexture canvasRenderTexture;
     [SerializeField] private ImageSender imageSender; 
+    [SerializeField] private SkinnedMeshRenderer handRenderer;
+    [SerializeField] private Transform fingerTip;
+    [SerializeField] private GameObject brush;
 
     private LineRenderer currentLine;
     private int currentLineIndex = 0;
-    [SerializeField] private Transform fingerTip;
+    private bool isHandOverCanvas = false;
+        
 
     public void OnCanvasSelected()
     {
@@ -84,6 +88,25 @@ public class CanvasPainting : MonoBehaviour
             Transform lastStroke = canvas.GetChild(canvas.childCount - 1);
             Destroy(lastStroke.gameObject);
         }
+    }
+
+    public void HideHand(bool state)
+    {
+        if (state && isHandOverCanvas)
+        {
+            handRenderer.enabled = false;
+            brush.SetActive(true);
+        }
+        else
+        {
+            handRenderer.enabled = true;
+            brush.SetActive(false);
+        }
+    }
+
+    public void SetIsHandOverCanvas(bool state)
+    {
+        isHandOverCanvas = state;
     }
     
 }
