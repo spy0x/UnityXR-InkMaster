@@ -5,10 +5,15 @@ using UnityEngine.Networking;
 
 public class ImageSender : MonoBehaviour
 {
-    [SerializeField] string serverUrl = "http://127.0.0.1:8000/ocr/"; // Your Django OCR API endpoint
-
+    [SerializeField] string serverUrl = "http://127.0.0.1:8000/ocr/"; // Endpoint para el editor
     [SerializeField] private Trainer trainer;
 
+# if !UNITY_EDITOR
+void Start()
+    {
+        serverUrl = "http://192.168.31.17:8000/ocr/";
+    }
+# endif
     // Call this function to send an image file
     public void SendImage(Texture2D image)
     {

@@ -29,17 +29,20 @@ public class Trainer : MonoBehaviour
     [SerializeField] private Color defaultColor = Color.white;
     [SerializeField] private float delayBeforeNextCharacter = 2f;
     [SerializeField] private CanvasPainting canvasPainting;
+    [SerializeField] private TextMeshProUGUI japaneseCharacterText;
 
     private string currentCharacter;
     private void Start()
     {
         characterText.text = "";
+        japaneseCharacterText.text = "";
         SetCurrentCharacter();
     }
 
     private void SetCurrentCharacter()
     {
         canvasPainting.ClearCanvas();
+        japaneseCharacterText.text = "";
         characterText.color = defaultColor; // Reset text color
         JapaneseCharacter[] characters =
             characterType switch
@@ -58,6 +61,7 @@ public class Trainer : MonoBehaviour
     }
     public void CheckInput(OCRResponse input)
     {
+        japaneseCharacterText.text = currentCharacter; // Show the correct character
         if (input.detectedText == currentCharacter)
         {
             characterText.color = correctColor;
@@ -67,6 +71,7 @@ public class Trainer : MonoBehaviour
     }
     public void WrongInput()
     {
+        japaneseCharacterText.text = currentCharacter; // Show the correct character
         characterText.color = incorrectColor;
         Invoke(nameof(SetCurrentCharacter), delayBeforeNextCharacter);
     }
