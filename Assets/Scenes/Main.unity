@@ -655,6 +655,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 642440762476954072, guid: 97bb96d5be1a20b4a92db5bf28c9f4b6, type: 3}
+      propertyPath: instanceId
+      value: 714ac48f-12fc-4978-a09e-a98b7ee458e1
+      objectReference: {fileID: 0}
     - target: {fileID: 840923896388000886, guid: 97bb96d5be1a20b4a92db5bf28c9f4b6, type: 3}
       propertyPath: m_Name
       value: TrainerSystem

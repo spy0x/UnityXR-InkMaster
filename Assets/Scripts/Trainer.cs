@@ -1,4 +1,5 @@
 using System;
+using Meta.WitAi.TTS.Utilities;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -30,6 +31,7 @@ public class Trainer : MonoBehaviour
     [SerializeField] private float delayBeforeNextCharacter = 2f;
     [SerializeField] private CanvasPainting canvasPainting;
     [SerializeField] private TextMeshProUGUI japaneseCharacterText;
+    [SerializeField] private TTSSpeaker ttsSpeaker;
 
     private string currentCharacter;
     private void Start()
@@ -58,6 +60,7 @@ public class Trainer : MonoBehaviour
         JapaneseCharacter randomCharacter = characters[Random.Range(0, characters.Length)];
         characterText.text = randomCharacter.romaji;
         currentCharacter = randomCharacter.japanese;
+        ttsSpeaker.Speak(randomCharacter.romaji);
     }
     public void CheckInput(OCRResponse input)
     {
