@@ -525,7 +525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _diskPath: TTS/
   _defaultSettings:
-    DiskCacheLocation: 0
+    DiskCacheLocation: 1
     StreamFromDisk: 0
     StreamBufferLength: 5
 --- !u!114 &6173083453469828796
