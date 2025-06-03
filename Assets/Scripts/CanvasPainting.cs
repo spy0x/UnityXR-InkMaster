@@ -10,16 +10,20 @@ public class CanvasPainting : MonoBehaviour
     [SerializeField] Color penColor = Color.black;
     [SerializeField] private string canvasLayerMask;
     [SerializeField] private RenderTexture canvasRenderTexture;
-    [SerializeField] private ImageSender imageSender; 
+    [SerializeField] private ImageSender imageSender;
     [SerializeField] private GameObject handObject;
     [SerializeField] private Transform fingerTip;
     [SerializeField] private GameObject brush;
+    [SerializeField] private ParticleSystem brushHandParticleEffect;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip brushHandAudioClip;
+    [SerializeField] private float strokeTimeLimit = 0.2f;
 
     private LineRenderer currentLine;
     private int currentLineIndex = 0;
     private bool isHandOverCanvas = false;
     private bool hideHand = false;
-        
+    private float lastStrokeTime;
 
     public void OnCanvasSelected()
     {
@@ -39,24 +43,33 @@ public class CanvasPainting : MonoBehaviour
         currentLine.endColor = penColor;
         currentLine.positionCount = 1;
         currentLine.SetPosition(0, pos);
+        lastStrokeTime = .0f;
     }
 
     private void Update()
     {
         if (!currentLine) return;
+        lastStrokeTime += Time.deltaTime;
         Vector3 pos = fingerTip.position;
         pos.z = canvas.position.z;
         var currentPosition = currentLine.GetPosition(currentLineIndex);
         if (Vector3.Distance(currentPosition, pos) > 0.01f)
         {
+            lastStrokeTime = 0.0f;
+            if (!audioSource.isPlaying) audioSource.Play();
             currentLineIndex++;
             currentLine.positionCount = currentLineIndex + 1;
             currentLine.SetPosition(currentLineIndex, pos);
+        } else if (lastStrokeTime > strokeTimeLimit)
+        {
+            // If the finger is not moving for a while, stop the audio
+            audioSource.Stop();
         }
     }
 
     public void OnCanvasUnselected()
     {
+        audioSource.Stop();
         currentLine = null;
         currentLineIndex = 0;
     }
@@ -65,7 +78,8 @@ public class CanvasPainting : MonoBehaviour
     public void SendToServer()
     {
         // convert render texture to texture2D
-        Texture2D texture = new Texture2D(canvasRenderTexture.width, canvasRenderTexture.height, TextureFormat.RGBA32, false);
+        Texture2D texture = new Texture2D(canvasRenderTexture.width, canvasRenderTexture.height, TextureFormat.RGBA32,
+            false);
         RenderTexture.active = canvasRenderTexture;
         texture.ReadPixels(new Rect(0, 0, canvasRenderTexture.width, canvasRenderTexture.height), 0, 0);
         texture.Apply();
@@ -81,7 +95,7 @@ public class CanvasPainting : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-    
+
     public void UndoLastStroke()
     {
         if (canvas.childCount > 0)
@@ -97,24 +111,37 @@ public class CanvasPainting : MonoBehaviour
         hideHand = state;
         SetHandDisplayState();
     }
-    
+
     // Called from Unity Wrapper Event Hover CanvasPainting gameObject
     public void SetIsHandOverCanvas(bool state)
     {
         isHandOverCanvas = state;
         SetHandDisplayState();
     }
+
     private void SetHandDisplayState()
     {
         if (hideHand && isHandOverCanvas)
         {
             handObject.SetActive(false);
             brush.SetActive(true);
+            PlayBrushHandsEffects();
         }
         else
         {
-            handObject.SetActive(true);
+            if (!handObject.activeSelf)
+            {
+                handObject.SetActive(true);
+                PlayBrushHandsEffects();
+            }
+
             brush.SetActive(false);
         }
+    }
+
+    private void PlayBrushHandsEffects()
+    {
+        if (brushHandParticleEffect) brushHandParticleEffect.Play();
+        if (audioSource && brushHandAudioClip) audioSource.PlayOneShot(brushHandAudioClip);
     }
 }
