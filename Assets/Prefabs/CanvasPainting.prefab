@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 2164022082144719826}
   - component: {fileID: 4503579554025175577}
   - component: {fileID: 8806613788457173486}
+  - component: {fileID: 7088325840016486006}
   m_Layer: 4
   m_Name: CanvasPainting
   m_TagString: Untagged
@@ -277,10 +278,34 @@ MonoBehaviour:
   _interactableView: {fileID: 2164022082144719826}
   _whenHover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8806613788457173486}
+        m_TargetAssemblyTypeName: CanvasPainting, Assembly-CSharp
+        m_MethodName: SetIsHandOverCanvas
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _whenUnhover:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8806613788457173486}
+        m_TargetAssemblyTypeName: CanvasPainting, Assembly-CSharp
+        m_MethodName: SetIsHandOverCanvas
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _whenSelect:
     m_PersistentCalls:
       m_Calls:
@@ -342,10 +367,110 @@ MonoBehaviour:
   canvasLayerMask: Water
   canvasRenderTexture: {fileID: 8400000, guid: 2d32d0eb233ecf54f85732d033ce0e0d, type: 2}
   imageSender: {fileID: 0}
-  brushHandRenderer: {fileID: 0}
-  brushHandMaterial: {fileID: 2100000, guid: 50fc1ccde08655f43b66a42e087d5f3c, type: 2}
-  originalHandMaterial: {fileID: 2100000, guid: db3a410a262fff84594694f542a202ce, type: 2}
+  handObject: {fileID: 0}
   fingerTip: {fileID: 0}
+  brush: {fileID: 0}
+  brushHandParticleEffect: {fileID: 0}
+  audioSource: {fileID: 7088325840016486006}
+  brushHandAudioClip: {fileID: 8300000, guid: 8433f4501d4f40d459082b5038f8fc64, type: 3}
+  strokeTimeLimit: 0.2
+--- !u!82 &7088325840016486006
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2845956199647775487}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7ec50a4a9c8c1b849a7d603bac46eb1d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 7ec50a4a9c8c1b849a7d603bac46eb1d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3661994484493444084
 GameObject:
   m_ObjectHideFlags: 0

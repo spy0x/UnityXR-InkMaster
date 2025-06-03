@@ -46,6 +46,7 @@ public class Trainer : MonoBehaviour
         canvasPainting.ClearCanvas();
         japaneseCharacterText.text = "";
         characterText.color = defaultColor; // Reset text color
+        japaneseCharacterText.color = defaultColor; // Reset text color
         JapaneseCharacter[] characters =
             characterType switch
             {
@@ -68,6 +69,9 @@ public class Trainer : MonoBehaviour
         if (input.detectedText == currentCharacter)
         {
             characterText.color = correctColor;
+            Color correctWithAlpha = correctColor;
+            correctWithAlpha.a = 0.5f; // Make the text semi-transparent
+            japaneseCharacterText.color = correctWithAlpha; // Set the color with transparency
             Invoke(nameof(SetCurrentCharacter), delayBeforeNextCharacter); // Set a new character after 1 second
         }
         else WrongInput();
@@ -75,6 +79,9 @@ public class Trainer : MonoBehaviour
     public void WrongInput()
     {
         japaneseCharacterText.text = currentCharacter; // Show the correct character
+        Color incorrectWithAlpha = incorrectColor;
+        incorrectWithAlpha.a = 0.5f; // Make the text semi-transparent
+        japaneseCharacterText.color = incorrectWithAlpha; // Set the color with transparency
         characterText.color = incorrectColor;
         Invoke(nameof(SetCurrentCharacter), delayBeforeNextCharacter);
     }

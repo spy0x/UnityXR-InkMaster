@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,11 @@ public class CanvasPainting : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip brushHandAudioClip;
     [SerializeField] private float strokeTimeLimit = 0.2f;
+    [SerializeField] private OVRPassthroughLayer passthroughLayer;
+    [SerializeField] private float passthroughCanvasBrightness = -0.7f;
+    [SerializeField] private float passthroughCanvasContrast = 0.5f;
+    [SerializeField] private float passthroughCanvasSaturation = 1f;
+    [SerializeField] private float fadeDuration = 1.0f;
 
     private LineRenderer currentLine;
     private int currentLineIndex = 0;
@@ -27,6 +33,7 @@ public class CanvasPainting : MonoBehaviour
 
     public void OnCanvasSelected()
     {
+        if (!hideHand) return;
         Vector3 pos = fingerTip.position;
         pos.z = canvas.position.z;
         currentLine = new GameObject("Line").AddComponent<LineRenderer>();
@@ -44,6 +51,23 @@ public class CanvasPainting : MonoBehaviour
         currentLine.positionCount = 1;
         currentLine.SetPosition(0, pos);
         lastStrokeTime = .0f;
+    }
+
+    private IEnumerator StartPassthroughEffects()
+    {
+        float t = 0f;
+        while (t < 1)
+        {
+            t += Time.deltaTime / fadeDuration;
+            float alpha = Mathf.Clamp01(t / fadeDuration);
+            passthroughLayer.colorMapEditorBrightness = Mathf.Lerp(0f, passthroughCanvasBrightness, alpha);
+            passthroughLayer.colorMapEditorContrast = Mathf.Lerp(0f, passthroughCanvasContrast, alpha);
+            passthroughLayer.colorMapEditorSaturation = Mathf.Lerp(0f, passthroughCanvasSaturation, alpha);
+            yield return null;
+        }
+        passthroughLayer.colorMapEditorBrightness = passthroughCanvasBrightness;
+        passthroughLayer.colorMapEditorContrast = passthroughCanvasContrast;
+        passthroughLayer.colorMapEditorSaturation = passthroughCanvasSaturation;
     }
 
     private void Update()
@@ -72,6 +96,23 @@ public class CanvasPainting : MonoBehaviour
         audioSource.Stop();
         currentLine = null;
         currentLineIndex = 0;
+    }
+
+    private IEnumerator StopPassthroughEffects()
+    {
+        float t = 0f;
+        while (t < 1)
+        {
+            t += Time.deltaTime / fadeDuration;
+            float alpha = Mathf.Clamp01(t / fadeDuration);
+            passthroughLayer.colorMapEditorBrightness = Mathf.Lerp(passthroughCanvasBrightness, 0f, alpha);
+            passthroughLayer.colorMapEditorContrast = Mathf.Lerp(passthroughCanvasContrast, 0f, alpha);
+            passthroughLayer.colorMapEditorSaturation = Mathf.Lerp(passthroughCanvasSaturation, 0f, alpha);
+            yield return null;
+        }
+        passthroughLayer.colorMapEditorBrightness = 0f;
+        passthroughLayer.colorMapEditorContrast = 0f;
+        passthroughLayer.colorMapEditorSaturation = 0f;
     }
 
     // Called from Unity Wrapper Event ThumbsUp gameObject
@@ -126,6 +167,7 @@ public class CanvasPainting : MonoBehaviour
             handObject.SetActive(false);
             brush.SetActive(true);
             PlayBrushHandsEffects();
+            StartCoroutine(StartPassthroughEffects());
         }
         else
         {
@@ -133,6 +175,7 @@ public class CanvasPainting : MonoBehaviour
             {
                 handObject.SetActive(true);
                 PlayBrushHandsEffects();
+                StartCoroutine(StopPassthroughEffects());
             }
 
             brush.SetActive(false);

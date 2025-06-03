@@ -11,7 +11,7 @@ public class ImageSender : MonoBehaviour
 # if !UNITY_EDITOR
 void Start()
     {
-        serverUrl = "http://192.168.31.17:8000/ocr/";
+        serverUrl = "http://192.168.1.97:8000/ocr/";
     }
 # endif
     // Call this function to send an image file
