@@ -11,13 +11,14 @@ public class CanvasPainting : MonoBehaviour
     [SerializeField] private string canvasLayerMask;
     [SerializeField] private RenderTexture canvasRenderTexture;
     [SerializeField] private ImageSender imageSender; 
-    [SerializeField] private SkinnedMeshRenderer handRenderer;
+    [SerializeField] private GameObject handObject;
     [SerializeField] private Transform fingerTip;
     [SerializeField] private GameObject brush;
 
     private LineRenderer currentLine;
     private int currentLineIndex = 0;
     private bool isHandOverCanvas = false;
+    private bool hideHand = false;
         
 
     public void OnCanvasSelected()
@@ -90,23 +91,30 @@ public class CanvasPainting : MonoBehaviour
         }
     }
 
+    // Called from Unity Wrapper Event IndexFingerUp gameObject
     public void HideHand(bool state)
     {
-        if (state && isHandOverCanvas)
+        hideHand = state;
+        SetHandDisplayState();
+    }
+    
+    // Called from Unity Wrapper Event Hover CanvasPainting gameObject
+    public void SetIsHandOverCanvas(bool state)
+    {
+        isHandOverCanvas = state;
+        SetHandDisplayState();
+    }
+    private void SetHandDisplayState()
+    {
+        if (hideHand && isHandOverCanvas)
         {
-            handRenderer.enabled = false;
+            handObject.SetActive(false);
             brush.SetActive(true);
         }
         else
         {
-            handRenderer.enabled = true;
+            handObject.SetActive(true);
             brush.SetActive(false);
         }
     }
-
-    public void SetIsHandOverCanvas(bool state)
-    {
-        isHandOverCanvas = state;
-    }
-    
 }

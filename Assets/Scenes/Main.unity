@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &31809192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5546045078820115225, guid: 0e69cfd760984784f8b27eff5f0a8e7a, type: 3}
+  m_PrefabInstance: {fileID: 186640022019328517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &60482183 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4949765454830296824, guid: 97bb96d5be1a20b4a92db5bf28c9f4b6, type: 3}
@@ -272,11 +277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a379f34d4f4f2e408d34f14bfb753ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!137 &843627654 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1579949368318016697, guid: 0e69cfd760984784f8b27eff5f0a8e7a, type: 3}
-  m_PrefabInstance: {fileID: 186640022019328517}
-  m_PrefabAsset: {fileID: 0}
 --- !u!20 &1014352910 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 223287601313203617, guid: 0e69cfd760984784f8b27eff5f0a8e7a, type: 3}
@@ -1256,11 +1256,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 186640022019328518}
     - target: {fileID: 4949765454830296824, guid: 97bb96d5be1a20b4a92db5bf28c9f4b6, type: 3}
-      propertyPath: handRenderer
+      propertyPath: handObject
       value: 
-      objectReference: {fileID: 843627654}
+      objectReference: {fileID: 31809192}
     - target: {fileID: 4949765454830296824, guid: 97bb96d5be1a20b4a92db5bf28c9f4b6, type: 3}
-      propertyPath: brushHandRenderer
+      propertyPath: handRenderer
       value: 
       objectReference: {fileID: 1182588790}
     - target: {fileID: 7593634758839842174, guid: 97bb96d5be1a20b4a92db5bf28c9f4b6, type: 3}

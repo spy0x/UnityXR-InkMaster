@@ -803,6 +803,10 @@ PrefabInstance:
       propertyPath: canvasPainting
       value: 
       objectReference: {fileID: 4949765454830296824}
+    - target: {fileID: 4484890435928954890, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: _defaultSettings.DiskCacheLocation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4870349423577097255, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
       propertyPath: m_Name
       value: TrainerDisplay
@@ -886,6 +890,10 @@ PrefabInstance:
     - target: {fileID: 6252058608298873038, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722776670581731563, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: instanceId
+      value: 775cf1e2-5462-462c-a491-c77fa6730a93
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
