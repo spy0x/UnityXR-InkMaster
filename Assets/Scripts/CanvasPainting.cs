@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CanvasPainting : MonoBehaviour
@@ -24,6 +25,8 @@ public class CanvasPainting : MonoBehaviour
     [SerializeField] private float passthroughCanvasContrast = 0.5f;
     [SerializeField] private float passthroughCanvasSaturation = 1f;
     [SerializeField] private float fadeDuration = 1.0f;
+    [SerializeField] private ParticleSystem wrongParticleEffect;
+    [SerializeField] private ParticleSystem correctParticleEffect;
 
     private LineRenderer currentLine;
     private int currentLineIndex = 0;
@@ -186,5 +189,17 @@ public class CanvasPainting : MonoBehaviour
     {
         if (brushHandParticleEffect) brushHandParticleEffect.Play();
         if (audioSource && brushHandAudioClip) audioSource.PlayOneShot(brushHandAudioClip);
+    }
+
+    public void PlayParticleEffect(bool isCorrect)
+    {
+        if (isCorrect)
+        {
+            if (correctParticleEffect) correctParticleEffect.Play();
+        }
+        else
+        {
+            if (wrongParticleEffect) wrongParticleEffect.Play();
+        }
     }
 }

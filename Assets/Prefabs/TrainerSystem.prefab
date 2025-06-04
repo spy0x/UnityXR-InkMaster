@@ -34,9 +34,81 @@ Transform:
   - {fileID: 1264952056475313535}
   - {fileID: 3987886308814887937}
   - {fileID: 5805532431273175840}
-  - {fileID: 2820424894145028605}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5283567309619945587
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1212457542950874012}
+  - component: {fileID: 8202734112297107846}
+  m_Layer: 4
+  m_Name: HandGrabInteractable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1212457542950874012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5283567309619945587}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.25899956, y: 0.73181325, z: -0.5082011, w: 0.37296146}
+  m_LocalPosition: {x: -0.4984894, y: 0.06145239, z: 0.037560582}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1962871126333003777}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8202734112297107846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5283567309619945587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a7676b01585ce43908639a27765dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactorFilters: []
+  _maxInteractors: -1
+  _maxSelectingInteractors: -1
+  _data: {fileID: 0}
+  _pointableElement: {fileID: 7879825704750104161}
+  _rigidbody: {fileID: 100697814753067324}
+  _physicsGrabbable: {fileID: 0}
+  _resetGrabOnGrabsUpdated: 1
+  _scoringModifier:
+    _positionRotationWeight: 0
+  _slippiness: 0
+  _supportedGrabTypes: 1
+  _pinchGrabRules:
+    _thumbRequirement: 0
+    _indexRequirement: 2
+    _middleRequirement: 0
+    _ringRequirement: 0
+    _pinkyRequirement: 0
+    _unselectMode: 1
+  _palmGrabRules:
+    _thumbRequirement: 1
+    _indexRequirement: 2
+    _middleRequirement: 2
+    _ringRequirement: 2
+    _pinkyRequirement: 1
+    _unselectMode: 0
+  _movementProvider: {fileID: 0}
+  _handAligment: 0
+  _handGrabPoses: []
 --- !u!1001 &1487033727935418189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -315,15 +387,148 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPainting
       objectReference: {fileID: 0}
+    - target: {fileID: 7088325840016486006, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c95f67c9c746734cbc80b59def6ab39, type: 3}
+    - target: {fileID: 7088325840016486006, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c95f67c9c746734cbc80b59def6ab39, type: 3}
     - target: {fileID: 8806613788457173486, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
       propertyPath: imageSender
       value: 
       objectReference: {fileID: 2497962726852050733}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2719044992853591831, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1212457542950874012}
+    - targetCorrespondingSourceObject: {fileID: 2719044992853591831, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2820424894145028605}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2845956199647775487, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 100697814753067324}
+    - targetCorrespondingSourceObject: {fileID: 2845956199647775487, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7879825704750104161}
+    - targetCorrespondingSourceObject: {fileID: 2845956199647775487, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1789200617949281404}
+    - targetCorrespondingSourceObject: {fileID: 2845956199647775487, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4304025957378340333}
   m_SourcePrefab: {fileID: 100100000, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+--- !u!1 &1871430319269697001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2845956199647775487, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
+  m_PrefabInstance: {fileID: 4505422480472858390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &100697814753067324
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871430319269697001}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &7879825704750104161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871430319269697001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f86b14a27b52f4f9298c33015b5c26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transferOnSecondSelection: 1
+  _addNewPointsToFront: 0
+  _forwardElement: {fileID: 0}
+  _oneGrabTransformer: {fileID: 1789200617949281404}
+  _twoGrabTransformer: {fileID: 0}
+  _targetTransform: {fileID: 0}
+  _maxGrabPoints: -1
+  _rigidbody: {fileID: 0}
+  _kinematicWhileSelected: 1
+  _throwWhenUnselected: 1
+--- !u!114 &1789200617949281404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871430319269697001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9597e632dfbca247bcf65e49c67078e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints:
+    ConstraintsAreRelative: 0
+    MinX:
+      Constrain: 1
+      Value: 0
+    MaxX:
+      Constrain: 1
+      Value: 0
+    MinY:
+      Constrain: 1
+      Value: 0
+    MaxY:
+      Constrain: 1
+      Value: 1
+    MinZ:
+      Constrain: 1
+      Value: 0
+    MaxZ:
+      Constrain: 1
+      Value: 0
+--- !u!65 &4304025957378340333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871430319269697001}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.44, y: 0.48, z: 0.06}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1962871126333003777 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2719044992853591831, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
@@ -334,7 +539,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8806613788457173486, guid: 60a83967cfc227347a2757c79151afc5, type: 3}
   m_PrefabInstance: {fileID: 4505422480472858390}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1871430319269697001}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a4899abd2045f64086bf9548a143b3f, type: 3}
@@ -423,12 +628,376 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2959046978740860824}
+    m_TransformParent: {fileID: 1962871126333003777}
     m_Modifications:
     - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
       propertyPath: canvasPainting
       value: 
       objectReference: {fileID: 4949765454830296824}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.size
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[0].romaji
+      value: ka
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[1].romaji
+      value: ki
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[2].romaji
+      value: ke
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[3].romaji
+      value: ko
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[4].romaji
+      value: sa
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[5].romaji
+      value: shi
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[6].romaji
+      value: su
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[7].romaji
+      value: se
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[8].romaji
+      value: ta
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[9].romaji
+      value: chi
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[10].romaji
+      value: tsu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[11].romaji
+      value: te
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[12].romaji
+      value: na
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[13].romaji
+      value: to
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[14].romaji
+      value: ni
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[15].romaji
+      value: nu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[16].romaji
+      value: ne
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[17].romaji
+      value: ha
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[18].romaji
+      value: fu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[19].romaji
+      value: ho
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[20].romaji
+      value: ma
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[21].romaji
+      value: mi
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[22].romaji
+      value: mu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[23].romaji
+      value: mo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[24].romaji
+      value: ya
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[25].romaji
+      value: yu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[26].romaji
+      value: yo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[27].romaji
+      value: ra
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[28].romaji
+      value: ri
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[29].romaji
+      value: ru
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[30].romaji
+      value: re
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[31].romaji
+      value: ro
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[32].romaji
+      value: wa
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[33].romaji
+      value: wo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[34].romaji
+      value: n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[35].romaji
+      value: n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[36].romaji
+      value: n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[37].romaji
+      value: n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[38].romaji
+      value: n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[39].romaji
+      value: n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[40].romaji
+      value: n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[41].romaji
+      value: n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[42].romaji
+      value: n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[43].romaji
+      value: wo
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[44].romaji
+      value: n
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[0].japanese
+      value: "\u304B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[1].japanese
+      value: "\u304D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[2].japanese
+      value: "\u3051"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[3].japanese
+      value: "\u3053"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[4].japanese
+      value: "\u3055"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[5].japanese
+      value: "\u3057"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[6].japanese
+      value: "\u3059"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[7].japanese
+      value: "\u305B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[8].japanese
+      value: "\u305F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[9].japanese
+      value: "\u3061"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[10].japanese
+      value: "\u3064"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[11].japanese
+      value: "\u3066"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[12].japanese
+      value: "\u306A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[13].japanese
+      value: "\u3068"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[14].japanese
+      value: "\u306B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[15].japanese
+      value: "\u306C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[16].japanese
+      value: "\u306D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[17].japanese
+      value: "\u306F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[18].japanese
+      value: "\u3075"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[19].japanese
+      value: "\u307B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[20].japanese
+      value: "\u307E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[21].japanese
+      value: "\u307F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[22].japanese
+      value: "\u3080"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[23].japanese
+      value: "\u3082"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[24].japanese
+      value: "\u3084"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[25].japanese
+      value: "\u3086"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[26].japanese
+      value: "\u3088"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[27].japanese
+      value: "\u3089"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[28].japanese
+      value: "\u308A"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[29].japanese
+      value: "\u308B"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[30].japanese
+      value: "\u308C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[31].japanese
+      value: "\u308D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[32].japanese
+      value: "\u308F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[33].japanese
+      value: "\u3092"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[34].japanese
+      value: "\u3093"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[35].japanese
+      value: "\u3093"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[36].japanese
+      value: "\u3093"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[37].japanese
+      value: "\u3093"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[38].japanese
+      value: "\u3093"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[39].japanese
+      value: "\u3093"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[40].japanese
+      value: "\u3093"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[41].japanese
+      value: "\u3093"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[42].japanese
+      value: "\u3093"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[43].japanese
+      value: "\u3092"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777953447277524673, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: hiraganaCharacters.Array.data[44].japanese
+      value: "\u3093"
+      objectReference: {fileID: 0}
     - target: {fileID: 4870349423577097255, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
       propertyPath: m_Name
       value: TrainerDisplay
@@ -475,7 +1044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6252058608298873038, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.026
+      value: -0.021999985
       objectReference: {fileID: 0}
     - target: {fileID: 6252058608298873038, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
       propertyPath: m_LocalRotation.w
@@ -511,6 +1080,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6252058608298873038, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722776670581731563, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: instanceId
+      value: 725c024a-3344-4de8-828c-2f927d3f0607
+      objectReference: {fileID: 0}
+    - target: {fileID: 8808994220459376804, guid: 13ff5f01768df6f44bf4dc5d78a285af, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

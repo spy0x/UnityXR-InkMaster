@@ -69,6 +69,7 @@ public class Trainer : MonoBehaviour
         if (input.detectedText == currentCharacter)
         {
             characterText.color = correctColor;
+            canvasPainting.PlayParticleEffect(true);
             Color correctWithAlpha = correctColor;
             correctWithAlpha.a = 0.5f; // Make the text semi-transparent
             japaneseCharacterText.color = correctWithAlpha; // Set the color with transparency
@@ -78,6 +79,7 @@ public class Trainer : MonoBehaviour
     }
     public void WrongInput()
     {
+        canvasPainting.PlayParticleEffect(false);
         japaneseCharacterText.text = currentCharacter; // Show the correct character
         Color incorrectWithAlpha = incorrectColor;
         incorrectWithAlpha.a = 0.5f; // Make the text semi-transparent
